@@ -1,0 +1,5 @@
+{
+    "name": "gaikan",
+    "main": "node.d.ts",
+    "browser": "browser.d.ts"
+}
