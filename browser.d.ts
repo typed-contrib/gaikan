@@ -18,10 +18,11 @@ declare function gaikan(input: string, root: any): string;
  * @param fragments - Each fragment.
  * @returns The compiled template string.
  */
-declare function gaikan(input: string, root: any, fragments: any): string;
+declare function gaikan(input: string, root: any, fragments: gaikan.Fragments): string;
 
 declare namespace gaikan {
-    export type TemplateFunction = (__r: any, root: any, __f: any) => string;
+    export type Fragments = { [key: string]: (runtime: typeof gaikan, root: any) => string; };
+    export type TemplateFunction = (runtime: typeof gaikan, root: any, fragments?: Fragments) => string;
     export type AlterantFunction = (value: any) => string;
     export type SetFunction = (value: any) => string;
 
@@ -63,3 +64,5 @@ declare namespace gaikan {
      */
     export function compileFromString(input: string): TemplateFunction;
 }
+
+export = gaikan;

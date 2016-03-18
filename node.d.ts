@@ -18,7 +18,7 @@ declare function gaikan(input: string, root: any): string;
  * @param fragments - Each fragment.
  * @returns The compiled template.
  */
-declare function gaikan(input: string, root: any, fragments: any): string;
+declare function gaikan(input: string, root: any, fragments: gaikan.Fragments): string;
 
 /**
  * Compiles a function for the input file, invokes it, and returns the output.
@@ -28,7 +28,7 @@ declare function gaikan(input: string, root: any, fragments: any): string;
  * @param fragments - Each fragment.
  * @returns The compiled template.
  */
-declare function gaikan(input: string, root: any, fragments: any, skipLayout: boolean): string;
+declare function gaikan(input: string, root: any, fragments: gaikan.Fragments, skipLayout: boolean): string;
 
 /**
  * Compiles a function for the input file, invokes it, and returns the output in the given callback.
@@ -45,7 +45,7 @@ declare function gaikan(input: string, root: any, callback: (result: string) => 
  * @param fragments - Each fragment.
  * @param callback - The result callback.
  */
-declare function gaikan(input: string, root: any, fragments: any, callback: (result: string) => void): number;
+declare function gaikan(input: string, root: any, fragments: gaikan.Fragments, callback: (result: string) => void): number;
 
 /**
  * Compiles a function for the input file, invokes it, and returns the output in the given callback.
@@ -55,10 +55,11 @@ declare function gaikan(input: string, root: any, fragments: any, callback: (res
  * @param callback - The result callback.
  * @param skipLayout - Indicates if the layout is skipped.
  */
-declare function gaikan(input: string, root: any, fragments: any, callback: (result: string) => void, skipLayout: boolean): number;
+declare function gaikan(input: string, root: any, fragments: gaikan.Fragments, callback: (result: string) => void, skipLayout: boolean): number;
 
 declare namespace gaikan {
-    export type TemplateFunction = (__r: any, root: any, __f: any) => string;
+    export type Fragments = { [key: string]: (runtime: typeof gaikan, root: any) => string; };
+    export type TemplateFunction = (__r: typeof gaikan, root: any, __f?: Fragments) => string;
     export type AlterantFunction = (value: any) => string;
     export type SetFunction = (value: any) => string;
 

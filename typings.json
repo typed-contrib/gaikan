@@ -1,5 +1,6 @@
 {
     "name": "gaikan",
+    "version": "^2.0.0",
     "main": "node.d.ts",
     "browser": "browser.d.ts"
 }
