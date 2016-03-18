@@ -1,0 +1,6 @@
+{
+    "name": "gaikan-typings-test-node",
+    "dependencies": {
+        "gaikan": "file:../../typings.json"
+    }
+}
