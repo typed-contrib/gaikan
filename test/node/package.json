@@ -1,0 +1,36 @@
+{
+  "name": "@types/gaikan-test-node",
+  "version": "2.0.2",
+  "description": "Type definitions for https://github.com/Deathspike/gaikan",
+  "main": "index.d.ts",
+  "author": "SomaticIT (spa@touchify.co)",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/typed-contrib/gaikan#readme",
+  "bugs": {
+    "url": "https://github.com/typed-contrib/gaikan/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/typed-contrib/gaikan.git"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ../../node_modules/typescript/bin/tsc -p ."
+  },
+  "keywords": [
+    "typings",
+    "typed",
+    "types",
+    "typescript",
+    "gaikan",
+    "html",
+    "node",
+    "templating"
+  ],
+  "devDependencies": {
+    "@types/gaikan": "file:../../"
+  }
+}
